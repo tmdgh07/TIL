@@ -29,7 +29,7 @@
 
 - 타임리프는 주로, **HTML 태그에 th:* 속성을 지정하는 방식**으로 동작한다.
 
-![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled.png)
+![Untitled](img/Thymeleaf/Untitled.png)
 
 - 위 사진처럼 th:* 속성을 지정하면, 기존 속성인 HTML의 **`name=”user1”`**이 아닌 **`th:name=”user2”`** 로 속성을 대체한다.
 
@@ -38,27 +38,27 @@
 - 데이터를 출력할 때는, **`th:text=”${…}”`** 를 사용한다.
 HTML 태그의 속성이 아니라 HTML 콘텐츠 안에서 직접 데이터를 출력할 때는 **`[[…]]`**를 사용한다.
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/80fb9ec7-3fe0-481b-a36c-b6e1a9f32b2d.png)
+    ![Untitled](img/Thymeleaf/80fb9ec7-3fe0-481b-a36c-b6e1a9f32b2d.png)
     
 
 - HTML 문서는 <, > 같은 특수 문자를 기반으로 정의된다.
 < 를 태그의 시작이 아닌 **문자로 표현**하는 것을 **HTML 엔티티**라고 하고,
 **특수문자를 HTML 엔티티로 변경**하는 것을 **이스케이프 ( `Escape` )** 라고 한다.
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%201.png)
+    ![Untitled](img/Thymeleaf/Untitled%201.png)
     
 - 그러나 위와 같이 <b> 태그를 활용해 문자에 Bold 효과를 넣으려고 할 때, **Escape에 의해 원치 않은 결과를 얻게 된다.**
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/f619d26c-4396-4587-84e0-13f196040442.png)
+    ![Untitled](img/Thymeleaf/f619d26c-4396-4587-84e0-13f196040442.png)
     
 - 이럴 땐, **타임리프가 제공하는 Unescape를 사용**하면 다음과 같이 원하는 결과를 얻을 수 있다.
 - **`th:utext, [(…)]`**
     
-    ![[], ()가 출력되지 않아, &#91, &#93, &#40, &#41을 대신 사용했습니다.](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/9eb3f4ec-0320-4879-8ee1-11f86373987d.png)
+    ![[], ()가 출력되지 않아, &#91, &#93, &#40, &#41을 대신 사용했습니다.](img/Thymeleaf/9eb3f4ec-0320-4879-8ee1-11f86373987d.png)
     
     [], ()가 출력되지 않아, &#91, &#93, &#40, &#41을 대신 사용했습니다.
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/f207ff8d-fb1c-4eaf-a3ff-5ccd8efafec2.png)
+    ![Untitled](img/Thymeleaf/f207ff8d-fb1c-4eaf-a3ff-5ccd8efafec2.png)
     
 
 ## Spring EL 변수 표현식
@@ -140,7 +140,7 @@ HTML 태그의 속성이 아니라 HTML 콘텐츠 안에서 직접 데이터를 
 - 리터럴 이란, **소스 코드상에 고정된 값**이다.
 예를 들면, 아래 코드에서 **“Shin”**은 **문자 리터럴**이고, **18**은 **숫자 리터럴**이다.
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%202.png)
+    ![Untitled](img/Thymeleaf/Untitled%202.png)
     
 
 - 타임리프에서 문자 리터럴은 **항상 작은 따옴표로 감싸줘야 한다.**
@@ -156,9 +156,9 @@ th:text=”Hello World!”     **: 생략 불가능 ( 오류 )**
 th:text="|Hello World!|"   **: 생략 가능**
 ```
 
-![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/1db44ccf-4e9b-419d-a7f9-9647cf686da8.png)
+![Untitled](img/Thymeleaf/1db44ccf-4e9b-419d-a7f9-9647cf686da8.png)
 
-![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%203.png)
+![Untitled](img/Thymeleaf/Untitled%203.png)
 
 ## 연산
 
@@ -228,7 +228,7 @@ current : 현재 객체**
 
 - **`th:if, th:unless ( if not )`**
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%204.png)
+    ![Untitled](img/Thymeleaf/Untitled%204.png)
     
     타임리프는, if, unless의 조건이 맞지 않으면 **태그 자체를 렌더링 하지 않는다.**
     
@@ -237,7 +237,7 @@ current : 현재 객체**
 
 - **`th:switch, th:case`**
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%205.png)
+    ![Untitled](img/Thymeleaf/Untitled%205.png)
     
     ***은 만족하는 조건이 없을 때 사용하는 default 이다.**
     
@@ -247,4 +247,4 @@ current : 현재 객체**
 - **`<th:block>`**은 **HTML 태그가 아닌, 타임리프의 유일한 자체 태그**이다.
 **each 반복문 만으로 해결하기 어려울 때, 블록 단위로 반복문을 돌릴 때 사용**한다.
     
-    ![Untitled](Thymeleaf%201b6bce901b0f46eaa8aee4b8f4b15c61/Untitled%206.png)
+    ![Untitled](img/Thymeleaf/Untitled%206.png)

@@ -10,7 +10,7 @@
 
 클린 코드라는 용어는 로버트 C. 마틴( Robert C. Martin ) 이 저술한 동명의 책에서 처음 등장했습니다.
 
-![위 책이 로버트 C. 마틴이 저술한 책, Clean Code 이다.](CleanCode%20fa61090c1e1a4629aa049fe046a5ce37/Untitled.png)
+![위 책이 로버트 C. 마틴이 저술한 책, Clean Code 이다.](img\CleanCode\Untitled.png)
 
 위 책이 로버트 C. 마틴이 저술한 책, Clean Code 이다.
 
