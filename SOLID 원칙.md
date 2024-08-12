@@ -1,10 +1,9 @@
 # SOLID 원칙
 
----
 
 ## SOLID 원칙이란 ?
 
-![Frame 2.png](SOLID%20%E1%84%8B%E1%85%AF%E1%86%AB%E1%84%8E%E1%85%B5%E1%86%A8%20812fb87b9f7c4ee2ac4b9144708910a7/Frame_2.png)
+![Frame 2.png](img/SOLID%20원칙/Frame_2.png)
 
 SOLID란 객체 지향 프로그래밍을 하며 지켜야 하는 5대 원칙입니다.
 
