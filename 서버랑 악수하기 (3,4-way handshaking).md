@@ -27,13 +27,13 @@ Client와 Server가 둘 다 LISTEN 상태일 때부터 시작한다.
 
 먼저, 클라이언트가 서버에게 접속을 요청하는 SYN 패킷을 보내고 SYN-SENT 상태가 된다.
 
-![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%201.png)
 서버가 SYN 요청을 받으면, 클라이언트에게 요청을 수락한다는 ACK 패킷을 전송한다.
 이와 동시에, 클라이언트에게 연결을 요청하는 SYN 패킷도 전송하게 되며, SYN RECEIVED 상태로 클라이언트의 ACK 을 기다린다.
 
 그리고 클라이언트는 ACK 패킷을 받고 연결이 완료된 ESTABLISHED 상태가 된다.
 
-![Frame 1.png](%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%86%BC%20%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20(%203%204-way%20HandShaking)%2012919aa371a743e4ab762b6e7141de16/Frame_1%202.png)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%202.png)
 
 클라이언트의 연결이 완료된 후, 클라이언트는 서버에게 요청을 수락하는 ACK 패킷을 보낸다.
 
@@ -59,25 +59,25 @@ ACK을 받은 서버도 ESTABLISHED 상태가 되며 연결이 완료된다.
 
 Client와 Server가 둘 다 ESTABLISHED 상태일 때부터 시작한다.
 
-![Frame 1.png](%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%86%BC%20%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20(%203%204-way%20HandShaking)%2012919aa371a743e4ab762b6e7141de16/Frame_1%203.png)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%203.png)
 
 클라이언트가 접속을 끊으려고, 연결을 종료한다는 FIN 패킷을 보내고 FIN-WAIT-1 상태가 된다.
 
-![Frame 1.png](%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%86%BC%20%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20(%203%204-way%20HandShaking)%2012919aa371a743e4ab762b6e7141de16/Frame_1%204.png)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%204.png)
 
 서버는 FIN을 받고, 일단 확인했다는 ACK 을 클라이언트에게 보낸다. 그 후 서버는, 자신의 통신이 끝날 때 까지 기다리는 CLOSE-WAIT 상태가 된다.
 
 클라이언트는 서버에서 ACK을 받은 후 서버가 남은 데이터 처리를 끝내고 FIN 패킷을 보낼 때까지 기다리는 FIN-WAIT-2 상태가 된다.
 
-![Frame 1.png](%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%86%BC%20%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20(%203%204-way%20HandShaking)%2012919aa371a743e4ab762b6e7141de16/Frame_1%205.png)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%205.png)
 
 서버가 데이터를 모두 보냈다면, 연결 끊을 준비가 되었다는 의미의 FIN 패킷을 클라이언트에게 전송하며, LAST-ACK 상태가 된다.
 
-![Frame 1.png](%E1%84%89%E1%85%A5%E1%84%87%E1%85%A5%E1%84%85%E1%85%A1%E1%86%BC%20%E1%84%8B%E1%85%A1%E1%86%A8%E1%84%89%E1%85%AE%E1%84%92%E1%85%A1%E1%84%80%E1%85%B5%20(%203%204-way%20HandShaking)%2012919aa371a743e4ab762b6e7141de16/Frame_1%206.png)
+![Frame 1.png](img/서버랑%20악수하기%20(3,4-way%20handshaking)/Frame_1%206.png)
 
 클라이언트가 FIN을 받으면, 확인했다는 ACK을 서버에게 보내게 되며, ACK을 받은 서버는 CLOSE 상태가 되어 연결을 종료한다.
 
-```basic
+```
 그런데 만약, “서버에서 FIN을 전송하기 전 보낸 패킷이 Routing 지연이나 패킷 유실로 인한 재전송 등으로 인해서 FIN 패킷보다 늦게 도착하는 상황”이 생긴다면 어떻게 될까?
 
 클라이언트에서 세션을 종료한 후 도착한 패킷들은 DROP되고 데이터가 유실될 것이다.
